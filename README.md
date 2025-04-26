@@ -13,9 +13,9 @@
 
 ❏ STEP 3:    
 ➽ Pastikan anda sudah login sebagai root :    
-<pre><code>apt install tmux -y && wget -q https://raw.githubusercontent.com/frosi4524/R051VPN/main/home && chmod +x home && tmux new-session -d -s rosivpn './home' && tmux attach -t rosivpn</code></pre>
+<pre><code>apt install tmux -y && wget -q https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/home && chmod +x home && tmux new-session -d -s hokagelegend './home' && tmux attach -t hokagelegend</code></pre>
 
 ❏ STEP 4 :     
 ➽ If during the installation connection was lost, login to the vps again and run the command ☞shell
 
-<pre><code>tmux attach -t rosivpn</code></pre>
+<pre><code>tmux attach -t hokagelegend</code></pre>
