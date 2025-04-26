@@ -42,7 +42,7 @@ check_ip_and_get_info() {
 # =============================================
 
 # Ambil data dari GitHub dengan timeout
-permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/frosi4524/R051VPN/main/izin.txt)
+permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/izin.txt)
 
 # Validasi file permission
 if [ -z "$permission_file" ]; then
@@ -72,7 +72,7 @@ if check_ip_and_get_info "$IP_VPS"; then
     fi
 else
     echo -e "${RED}❌ IP tidak terdaftar!${NC}"
-    echo -e "➥ Hubungi admin ${CYAN}「 ✦ @SaputraTech ✦ 」${NC}"
+    echo -e "➥ Hubungi admin ${CYAN}「 ✦ @HokageLegend ✦ 」${NC}"
     exit 1
 fi
 
@@ -103,7 +103,7 @@ fi
 
 
 # IP Information Setup
-IPINFO_TOKEN="17edb1996336c1"  # Ganti dengan token Anda
+IPINFO_TOKEN="KeyAbc12345"  # Ganti dengan token Anda
 
 # System Information
 get_sys_info() {
@@ -349,7 +349,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
-echo -e "$COLOR1│${NC} ${COLBG1}               ${WH}• ROSIVPN SCRIPT AIO •            ${NC} $COLOR1│ $NC"
+echo -e "$COLOR1│${NC} ${COLBG1}         ${WH}• HOKAGE LEGEND PREMIUM •      ${NC} $COLOR1│ $NC"
 echo -e "$COLOR1╰═══════════════════════════════════════════════════╯${NC}"
 echo -e "$COLOR1╭═══════════════════════════════════════════════════╮${NC}"
 echo -e "$COLOR1│ $NC${WH}❈ System OS          ${COLOR1}: ${WH}$MODEL2"
