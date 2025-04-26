@@ -43,7 +43,7 @@ check_ip_and_get_info() {
 # =============================================
 
 # Ambil data dari GitHub dengan timeout
-permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/frosi4524/R051VPN/main/izin.txt)
+permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/izin.txt)
 
 # Validasi file permission
 if [ -z "$permission_file" ]; then
@@ -73,7 +73,7 @@ if check_ip_and_get_info "$IP_VPS"; then
     fi
 else
     echo -e "${RED}❌ IP tidak terdaftar!${NC}"
-    echo -e "➥ Hubungi admin ${CYAN}「 ✦ @SaputraTech ✦ 」${NC}"
+    echo -e "➥ Hubungi admin ${CYAN}「 ✦ @HokageLegend ✦ 」${NC}"
     exit 1
 fi
 
@@ -205,7 +205,7 @@ function skt-domain() {
 
     # Fungsi instalasi slowdns
     install_slowdns() {
-        local script_url="https://raw.githubusercontent.com/frosi4524/R051VPN/main/SKT-DnsTT/installsl.sh"
+        local script_url="https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/SKT-DnsTT/installsl.sh"
         local output_file="installsl.sh"
         
         echo -e "${COLOR1}Mengunduh SlowDNS...${NC}"
@@ -464,7 +464,7 @@ case $opt in
 06 |7) clear ; skt-certv2ray ;; 
 07 |8) clear ; skt-gotopp ;; 
 09 |9) clear ; skt-check-port ;; 
-10 |10) clear ; wget -q https://raw.githubusercontent.com/raffasyaa/rebuildpepes/main/rebuildpepesmenu && bash rebuildpepesmenu ;; 
+10 |10) clear ; wget -q https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/rebuildpepesmenu && bash rebuildpepesmenu ;; 
 00 |0) clear ; menu ;; 
 *) echo -e "" ; echo "Anda salah tekan" ; sleep 1 ; skt-system ;;
 esac
