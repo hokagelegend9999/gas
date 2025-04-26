@@ -1,3 +1,8 @@
+<p align="center">
+  <img src="https://github.com/hokagelegend9999/gas/blob/main/original.png?raw=true" alt="Tampilan Menu" width="600"/>
+</p>
+
+
 ☘ SUPPORT OS ☘  
   
 ➽ Debian 10 & 11 (recommended)   
