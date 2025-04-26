@@ -44,7 +44,7 @@ check_ip_and_get_info() {
 # =============================================
 
 # Ambil data dari GitHub dengan timeout
-permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/frosi4524/R051VPN/main/izin.txt)
+permission_file=$(curl -s --connect-timeout 10 https://raw.githubusercontent.com/hokagelegend9999/gas/refs/heads/main/izin.txt)
 
 # Validasi file permission
 if [ -z "$permission_file" ]; then
