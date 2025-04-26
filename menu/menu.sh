@@ -103,7 +103,7 @@ fi
 
 
 # IP Information Setup
-IPINFO_TOKEN="KeyAbc12345"  # Ganti dengan token Anda
+IPINFO_TOKEN="Abc12345"  # Ganti dengan token Anda
 
 # System Information
 get_sys_info() {
@@ -126,10 +126,12 @@ get_net_info() {
     # IP Address
     IPVPS=$(curl -s4 --connect-timeout 3 ifconfig.me || curl -s4 --connect-timeout 3 ipinfo.io/ip || echo "Unknown")
     
-    # ISP & City with fallback
-    local ipinfo_response=$(curl -s "https://ipinfo.io?token=$IPINFO_TOKEN")
-    ISP=$(echo "$ipinfo_response" | jq -r '.org // empty' | cut -d ' ' -f 2-)
-    CITY=$(echo "$ipinfo_response" | jq -r '.city // empty')
+  # ISP & City with fallback
+    get_net_info() {
+    IPVPS=$(curl -s4 --connect-timeout 3 ifconfig.me || echo "Unknown")
+    ISP=$(curl -s --connect-timeout 3 ip-api.com/json/${IPVPS} | grep -Po '"isp":\s*"\K[^"]*' || echo "Unknown")
+    CITY=$(curl -s --connect-timeout 3 ip-api.com/json/${IPVPS} | grep -Po '"city":\s*"\K[^"]*' || echo "Unknown")
+
     
     if [ -z "$ISP" ]; then
         ISP=$(curl -s ipapi.co/org)
