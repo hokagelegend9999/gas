@@ -1,6 +1,6 @@
 #!/bin/bash
 # Ohp Script
-# Mod By SKAI0
+# Mod By HOKAGE LEGEND
 # ==========================================
 # Color
 RED='\033[0;31m'
@@ -15,7 +15,7 @@ LIGHT='\033[0;37m'
 # Getting
 
 # Download File Ohp
-wget https://github.com/lfasmpao/open-http-puncher/releases/download/0.1/ohpserver-linux32.zip
+wget https://github.com/givps/open-http-puncher/raw/refs/heads/main/ohpserver-linux32.zip
 unzip ohpserver-linux32.zip
 chmod +x ohpserver
 cp ohpserver /usr/local/bin/ohpserver
@@ -26,7 +26,7 @@ cp ohpserver /usr/local/bin/ohpserver
 cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
 Description=SSH OHP Redirection Service
-Documentation=https://t.me/abecasdee
+Documentation=https://t.me/hokagelegend1
 After=network.target nss-lookup.target
 
 [Service]
@@ -47,7 +47,7 @@ END
 cat > /etc/systemd/system/dropbear-ohp.service << END
 [Unit]]
 Description=Dropbear OHP Redirection Service
-Documentation=https://t.me/abecasdee
+Documentation=https://t.me/hokagelegend1
 After=network.target nss-lookup.target
 
 [Service]
@@ -68,7 +68,7 @@ END
 cat > /etc/systemd/system/openvpn-ohp.service << END
 [Unit]]
 Description=OpenVPN OHP Redirection Service
-Documentation=https://t.me/abecasdee
+Documentation=https://t.me/hokagelegend1
 After=network.target nss-lookup.target
 
 [Service]
