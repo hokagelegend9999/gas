@@ -18,19 +18,18 @@ check_ip_and_get_info() {
     while IFS= read -r line; do
         # Hapus karakter khusus dan spasi berlebih
         line=$(echo "$line" | tr -d '\r' | sed 's/[^[:print:]]//g' | xargs)
-        
+
         # Split baris menjadi array
         read -ra fields <<< "$line"
-        
-        
+
         # Kolom 4 = IP Address (index 3)
         if [[ "${fields[3]}" == "$ip" ]]; then
             client_name="${fields[1]}"  # Kolom 2
             exp_date="${fields[2]}"     # Kolom 3
-            
+
             # Bersihkan tanggal dari karakter khusus
             exp_date=$(echo "$exp_date" | sed 's/[^0-9-]//g' | xargs)
-            
+
             return 0
         fi
     done <<< "$permission_file"
@@ -58,7 +57,7 @@ IP_VPS=$(hostname -I | awk '{print $1}')
 # =============================================
 echo -e "${GREEN}⌛ Memeriksa lisensi...${NC}"
 if check_ip_and_get_info "$IP_VPS"; then
-    
+
     # Validasi format tanggal ISO 8601
     if ! [[ "$exp_date" =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$ ]]; then
         echo -e "${RED}❌ Format tanggal invalid: '$exp_date' (harus YYYY-MM-DD)${NC}"
@@ -89,10 +88,6 @@ fi
 
 days_remaining=$(( (exp_epoch - current_epoch) / 86400 ))
 
-# ... [Bagian lain dari script tetap sama] ...
-
-
-
 # =============================================
 #          [ Pengecekan Dependency ]
 # =============================================
@@ -100,7 +95,6 @@ if ! command -v jq &>/dev/null; then
     echo -e "${YELLOW}⚠️ Installing jq...${NC}"
     sudo apt-get install jq -y
 fi
-
 
 # IP Information Setup
 IPINFO_TOKEN="Abc12345"  # Ganti dengan token Anda
@@ -114,32 +108,26 @@ get_sys_info() {
     # Memory Info
     RAM=$(free -m | awk '/Mem:/ {printf "%.0fM", $2}')
     SWAP=$(free -m | awk '/Swap:/ {printf "%.0fM", $2}')
-    
+
     # CPU Info
     CORE=$(nproc)
     CPU_USAGE=$(top -bn1 | awk '/Cpu/ {printf "%.1f%%", 100 - $8}')
 }
 
-
 # Network Information
 get_net_info() {
     # IP Address
-    IPVPS=$(curl -s4 --connect-timeout 3 ifconfig.me || curl -s4 --connect-timeout 3 ipinfo.io/ip || echo "Unknown")
-    
-  # ISP & City with fallback
-    get_net_info() {
     IPVPS=$(curl -s4 --connect-timeout 3 ifconfig.me || echo "Unknown")
     ISP=$(curl -s --connect-timeout 3 ip-api.com/json/${IPVPS} | grep -Po '"isp":\s*"\K[^"]*' || echo "Unknown")
     CITY=$(curl -s --connect-timeout 3 ip-api.com/json/${IPVPS} | grep -Po '"city":\s*"\K[^"]*' || echo "Unknown")
 
-    
     if [ -z "$ISP" ]; then
         ISP=$(curl -s ipapi.co/org)
     fi
     if [ -z "$CITY" ]; then
         CITY=$(curl -s ipapi.co/city)
     fi
-    
+
     # Domain Info
     DOMAIN=$(cat /etc/xray/domain 2>/dev/null || echo "Not Set")
 }
@@ -150,15 +138,13 @@ get_uptime() {
     days=$((uptime_sec/86400))
     hours=$(( (uptime_sec%86400)/3600 ))
     minutes=$(( (uptime_sec%3600)/60 ))
-    
+
     if [ $days -gt 0 ]; then
         echo "${days}d ${hours}h ${minutes}m"
     else
         echo "${hours}h ${minutes}m"
     fi
 }
-
-
 
 #######################################
 dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
