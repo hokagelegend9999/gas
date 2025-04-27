@@ -37,7 +37,7 @@ NC='\033[0m' # No Color
 export PINK='\033[0;35m'
 export YELLOW='\033[0;33m'
 
-echo -e "${GREEN}♻️ Checking Ticket Masuk...${NC}"
+echo -e "${GREEN}♻️Check Validasi Masuk...${NC}"
 sleep 3
 clear 
 
@@ -66,7 +66,7 @@ while true; do
         echo "Client Name accepted... Let's go..."
         break
     else
-        echo "Sorry beb, IP kamu belum terdaftar di database saya !!!"
+        echo "Untuk Daftar Hubungi Admin Hokage Legend"
         rm -f /root/home # Ganti dengan path yang sesuai ke file installer
         exit 1
     fi
@@ -490,9 +490,9 @@ MESSAGE="\`\`\`
 ❖ Area ISP    : $REGION
 ❖ Waktu       : $TIME
 ❖ Tanggal     : $DATE
-❏━━━━━━━━━━━━━━━━━❏
-👑 Dev @FRosi46 👑
-❏━━━━━━━━━━━━━━━━━❏
+❏━━━━━━━━***************━━━━━━━━━❏
+👑 Dev https://t.me/hokagelegend1 👑
+❏━━━━━━━******************━━━━━━━━❏
 \`\`\`"
 
 send_telegram_message "$MESSAGE"
