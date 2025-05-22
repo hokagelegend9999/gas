@@ -58,15 +58,15 @@ curl -F chat_id="${ID}" \
 ◈ IP VPS  : ${vps_ip}
 ◈ DOMAIN  : ${domain}
 ◈ Tanggal : ${date}
-◈ Version : 1.0 Stable 
-◈ Built By  : @SaputraTech 
+◈ Version   : v.3.0 Original 
+◈ Built By  : @HookageLegend 
 ================================= 
 ➣ How To Restore ?
 ➣ Use SFTP
 ➣ Go to /root
 ➣ Replace file backup.zip
 ================================= 
-         🍀 GENERATE BY SFTP 🍀 
+🍀 Gunakakan SFTP Remote 🍀 
 ================================= 
 " https://api.telegram.org/bot${TOKEN}/sendDocument &> /dev/null
 
@@ -74,7 +74,7 @@ cd /root
 echo -e " ${TEAL}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e " ${PINK}      ❐ MENU MANUAL BACKUP ❐ ${NC}"
 echo -e " ${TEAL}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
-echo -e " ${ORANGE}     🍀 POWERED BY CHATGPT 🍀  ${NC}"
+echo -e " ${ORANGE}  🍀 POWERED BY @HookageLegend 🍀  ${NC}"
 echo -e " ${TEAL}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e " ${TEAL}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}" 
 echo -e " ${GREEN}      ❐ Successfully Backup ❐${NC}"
