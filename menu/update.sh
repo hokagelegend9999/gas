@@ -53,7 +53,7 @@ if [ -z "$permission_file" ]; then
 fi
 
 # Ambil IP VPS dengan metode alternatif
-IP_VPS=$(hostname -I | awk '{print $1}')
+IP_VPS=$(curl -s ipv4.icanhazip.com)
 
 # =============================================
 #          [ Pengecekan IP ]
